@@ -34,6 +34,11 @@ resource "aws_lb_listener_rule" "green" {
       values = var.active_color == "green" ? var.lb_listener_rule_host_header : var.lb_listener_rule_host_header_inactive
     }
   }
+  condition {
+    path_pattern {
+      values = var.lb_listener_rule_path_pattern
+    }
+  }
   tags = merge(var.tags, {
     "Name" = var.active_color == "green" ? local.lb_listener_rule_live_name : local.lb_listener_rule_test_name
   })
