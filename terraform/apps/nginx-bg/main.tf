@@ -35,7 +35,7 @@ module "nginx_bg" {
   memory_scalein_cooldown_seconds  = var.memory_scalein_cooldown_seconds
 
   # Lb listener
-  lb_http_listener_arn                  = local.tfcore.alb_http_listener_arn
+  lb_https_listener_arn                 = local.tfcore.alb_https_listener_arn
   lb_listener_rule_host_header          = var.lb_listener_rule_host_header
   lb_listener_rule_host_header_inactive = var.lb_listener_rule_host_header_inactive
   lb_listener_rule_path_pattern         = var.lb_listener_rule_path_pattern

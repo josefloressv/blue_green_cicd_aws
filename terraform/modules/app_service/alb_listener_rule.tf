@@ -1,6 +1,6 @@
 resource "aws_lb_listener_rule" "main" { # when blue/green this is blue
   count        = var.attach_to_load_balancer == true ? 1 : 0
-  listener_arn = var.lb_http_listener_arn
+  listener_arn = var.lb_https_listener_arn
 
   action {
     type             = "forward"
@@ -23,7 +23,7 @@ resource "aws_lb_listener_rule" "main" { # when blue/green this is blue
 
 resource "aws_lb_listener_rule" "green" {
   count        = var.enable_blue_green_deployment ? 1 : 0
-  listener_arn = var.lb_http_listener_arn
+  listener_arn = var.lb_https_listener_arn
 
   action {
     type             = "forward"

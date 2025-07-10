@@ -131,6 +131,11 @@ variable "lb_http_listener_arn" {
   default = ""
 }
 
+variable "lb_https_listener_arn" {
+  type    = string
+  default = ""
+}
+
 variable "lb_listener_rule_host_header" {
   type    = list(string)
   default = []

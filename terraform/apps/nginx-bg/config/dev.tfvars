@@ -20,8 +20,8 @@ task_placement_strategy_rules = [
 ]
 
 # Lb listener
-lb_listener_rule_host_header          = ["nginx-bg.nonprod.bgdemo.com"]
-lb_listener_rule_host_header_inactive = ["inactive.nginx-bg.nonprod.bgdemo.com"]
+lb_listener_rule_host_header          = ["deploypro.cloud"]
+lb_listener_rule_host_header_inactive = ["test.deploypro.cloud"]
 lb_listener_rule_path_pattern         = ["/*"]
 
 # Target Group
