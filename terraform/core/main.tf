@@ -39,10 +39,22 @@ module "asg_ecs_linux" {
   tags = local.common_tags
 }
 
+# ACM
+module "acm" {
+  source = "../modules/acm"
+  tags   = local.common_tags
+
+  domain_name               = var.domain_name
+  subject_alternative_names = var.subject_alternative_names
+}
+
 # ALB
 module "alb" {
-  source          = "../modules/alb"
-  public_subnets  = module.net.public_subnet_ids
-  security_groups = [aws_security_group.alb.id]
-  tags            = local.common_tags
+  source                = "../modules/alb"
+  public_subnets        = module.net.public_subnet_ids
+  security_groups       = [aws_security_group.alb.id]
+  tags                  = local.common_tags
+  create_http_listener  = false
+  create_https_listener = true
+  certificate_arn       = module.acm.certificate_id
 }

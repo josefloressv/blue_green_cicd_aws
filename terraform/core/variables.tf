@@ -77,3 +77,14 @@ variable "linux_cp_target_capacity" {
   type = number
 }
 #endregion
+
+#region ACM
+variable "domain_name" {
+  type = string
+}
+
+variable "subject_alternative_names" {
+  type    = list(string)
+  default = []
+}
+#endregion

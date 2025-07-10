@@ -21,6 +21,10 @@ output "alb_http_listener_arn" {
   value = module.alb.alb_http_listener_arn
 }
 
+output "alb_https_listener_arn" {
+  value = module.alb.alb_https_listener_arn
+}
+
 #endregion
 
 #region Linux ECS Cluster outputs

@@ -21,3 +21,7 @@ linux_cp_min_scaling_step_size = 1
 linux_cp_max_scaling_step_size = 1
 linux_cp_target_capacity       = 100
 #endregion
+
+# ACM
+domain_name               = "deploypro.cloud"
+subject_alternative_names = ["test.deploypro.cloud"]
