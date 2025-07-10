@@ -105,6 +105,8 @@ terraform plan \
   -var-file="$VAR_FILE" \
   -out="$ENV.tfplan"
 
+terraform output
+
 # Apply
 if [ "_${TFACTION}" == "_apply" ]; then
   echo "Running Terraform apply..."
