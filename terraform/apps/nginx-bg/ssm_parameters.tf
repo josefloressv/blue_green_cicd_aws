@@ -25,7 +25,6 @@ resource "aws_ssm_parameter" "SPRING_DATASOURCE_URL" {
   }
 }
 
-
 resource "aws_ssm_parameter" "active_color" {
   name  = "${local.ssm_prefix}/active_color"
   type  = "String"

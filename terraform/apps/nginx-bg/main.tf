@@ -21,7 +21,7 @@ module "nginx_bg" {
 
   # Blue/Green Deployment
   enable_blue_green_deployment = true
-  active_color                 = aws_ssm_parameter.active_color.value
+  active_color                 = nonsensitive(aws_ssm_parameter.active_color.value)
 
   task_min_number = var.task_min_number
   task_max_number = var.task_max_number

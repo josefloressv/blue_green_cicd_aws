@@ -1,4 +1,4 @@
-resource "aws_lb_listener_rule" "main" { # when blue/green this is blue
+resource "aws_lb_listener_rule" "main" { # Blue environment listener rule
   count        = var.attach_to_load_balancer == true ? 1 : 0
   listener_arn = var.lb_https_listener_arn
 
@@ -21,7 +21,7 @@ resource "aws_lb_listener_rule" "main" { # when blue/green this is blue
   })
 }
 
-resource "aws_lb_listener_rule" "green" {
+resource "aws_lb_listener_rule" "green" { # Green environment listener rule
   count        = var.enable_blue_green_deployment ? 1 : 0
   listener_arn = var.lb_https_listener_arn
 

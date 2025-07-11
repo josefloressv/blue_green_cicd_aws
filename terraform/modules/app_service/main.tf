@@ -68,7 +68,7 @@ resource "aws_ecs_service" "service" { # when blue/green this is blue
   lifecycle {
     create_before_destroy = true
     ignore_changes = [
-      desired_count,
+      desired_count, # managed by blue/green deployment app
       task_definition,
       # capacity_provider_strategy
     ]
@@ -130,7 +130,7 @@ resource "aws_ecs_service" "green" {
   lifecycle {
     create_before_destroy = true
     ignore_changes = [
-      desired_count,
+      desired_count, # Managed by blue/green deployment app
       task_definition,
       # capacity_provider_strategy
     ]
