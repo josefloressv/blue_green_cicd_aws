@@ -20,3 +20,6 @@ crash.log
 
 # Terraform variable files for local modules development other per environment are expected like nonprod.tfvars, prod.tfvars, etc.
 .auto.tfvars
+
+# MacOS
+.DS_Store
